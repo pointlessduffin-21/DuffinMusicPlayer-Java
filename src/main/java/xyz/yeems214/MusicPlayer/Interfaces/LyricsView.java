@@ -49,11 +49,17 @@ public class LyricsView extends Main {
                 count++;
             }
         }
-        System.out.println("\nEnter the number of the lyrics you want to view (or 'q' to quit): ");
+        System.out.println("\nEnter the number of the lyrics you want to view: \nPress o to Open Lyrics by Link or q to quit");
         String choiceStr = input.nextLine();
         if (choiceStr.equalsIgnoreCase("q")) {
             Main.mainMenu();
-        } else {
+        } else if (choiceStr.equalsIgnoreCase("o")) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter the file path of the lyrics you want to display (.txt): ");
+            String lyricsFile = scan.nextLine();
+            fileReader(lyricsFile);
+        }
+        else {
             try {
                 int choice = Integer.parseInt(choiceStr);
                 if (lyricsMap.containsKey(choice)) {
