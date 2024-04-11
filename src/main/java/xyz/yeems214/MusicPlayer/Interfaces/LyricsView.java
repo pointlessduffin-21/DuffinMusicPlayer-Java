@@ -55,8 +55,14 @@ public class LyricsView extends Main {
             Main.mainMenu();
         } else if (choiceStr.equalsIgnoreCase("o")) {
             Scanner scan = new Scanner(System.in);
-            System.out.println("Enter the file path of the lyrics you want to display (.txt): ");
+            System.out.println("Enter the file path of the lyrics you want to display (.txt & .lrc): ");
             String lyricsFile = scan.nextLine();
+            if (lyricsFile.isEmpty()) {
+                System.out.println("Invalid choice! Please try again.");
+                return;
+            } else if (lyricsFile.contains("\"")) {
+                lyricsFile = lyricsFile.replace("\"", "");
+            }
             fileReader(lyricsFile);
         }
         else {
@@ -80,7 +86,6 @@ public class LyricsView extends Main {
 
     public static void displayLyricInsights(String lyricsFile) {
         try {
-            clearConsole();
             Scanner scan = new Scanner(System.in);
             LyricsInsights.getLyricInsights(lyricsFile);
             System.out.println("Do you want to view another lyrics? (yes/no)");

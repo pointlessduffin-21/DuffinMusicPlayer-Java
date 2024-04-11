@@ -4,7 +4,7 @@ import google.generativeai as genai
 def gemini_ai(input):
 
     input = input
-    genai.configure(api_key="<YOUR-API-KEY>")
+    genai.configure(api_key="YOUR_API_KEY")
 
 
     # Set up the model

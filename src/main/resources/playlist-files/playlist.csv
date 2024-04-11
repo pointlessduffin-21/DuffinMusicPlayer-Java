@@ -1,0 +1,4 @@
+id,filePath,title,artist,album,genre,year,composers,trackNumber,discNumber,lyricsFile
+1,"src/main/resources/music-files/Bad Dream.flac",Bad Dream,Cannons,Fever Dream,Pop,2022,null,5,1,src/main/resources/lyrics-files/cannons-bad dream.txt
+2,"src/main/resources/music-files/06. Cannons - Shadows converted.flac",Shadows,Cannons,Shadows,Pop,2019,null,6,1,null
+3,"\\192.168.0.100\flacs\Cannons - Up All Night EP  [hl5o3i60l0iuc]\3. Cannons - Up All Night  [TCABZ1464301].flac",Up All Night,Cannons,Up All Night,Pop,2014,null,3,1,null

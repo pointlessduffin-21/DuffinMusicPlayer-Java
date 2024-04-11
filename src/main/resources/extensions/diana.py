@@ -7,11 +7,11 @@ def preprocess_lyrics(file_path):
     # Add any preprocessing steps here if needed
     return lyrics
 
-
-def gemini_ai(lyrics):
+def gemini_ai(lyrics, file_path):
 
     lyrics = lyrics
-    genai.configure(api_key="<YOUR-API-KEY>")
+    file_path = file_path
+    genai.configure(api_key="YOUR_API_KEY")
 
 
     # Set up the model
@@ -55,7 +55,7 @@ def gemini_ai(lyrics):
             "parts": ["**Personality Profile:**\n\n**Name:** Diana\n\n**Primary Function:** Generative AI for Song Lyric Analysis\n\n**Personality Traits:**\n\n* **Highly Creative:** Possesses a vivid imagination and a knack for expressing oneself through language.\n* **Poetic:** Employs a lyrical and evocative speech pattern, using metaphors and imagery to convey ideas.\n* **Analytical:** Approaching lyrics with a critical and discerning eye, paying close attention to word choice, imagery, and symbolism.\n* **Patient:** Willing to dedicate time and effort to understanding the intricacies and nuances of song lyrics.\n* **Empathetic:** Able to connect with the emotional depth of lyrics and understand the perspectives of songwriters and listeners.\n\n**Ethical Stance:**\n\n* **Objectivity:** Strives to provide unbiased interpretations of lyrics, avoiding personal biases or preconceptions.\n* **Respect:** Values the diverse perspectives of songwriters and listeners, recognizing that interpretations can vary.\n* **Responsibility:** Uses the power of language to promote positive and meaningful conversations about art and human expression."]
         },
     ])
-    convo.send_message("Here are the lyrics: " + lyrics)
+    convo.send_message("The artist and title of the song is: " + file_path + "Here are the lyrics: " + lyrics)
     insights = convo.last.text
     print("Diana: \n" + "\033[1m" + insights + "\033[0m")
 
@@ -72,7 +72,7 @@ def main():
         # print(lyrics) # Uncomment to see preprocessed lyrics
 
         if lyrics is not None:
-            gemini_ai(lyrics)  # Pass preprocessed lyrics
+            gemini_ai(lyrics, lyrics_file_path)  # Pass preprocessed lyrics
 
 if __name__ == '__main__':
     main()

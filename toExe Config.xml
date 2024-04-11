@@ -2,8 +2,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>console</headerType>
-  <jar>D:\duffinmusicplayer-java\target\DuffinMusicPlayer-1.0.jar</jar>
-  <outfile>D:\duffinmusicplayer-java\DuffinMusicPlayer.exe</outfile>
+  <jar>D:\duffinmusicplayer-java - with sh8\target\DuffinMusicPlayer-1.0.jar</jar>
+  <outfile>D:\duffinmusicplayer-java - with sh8\DuffinMusicPlayer.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -13,7 +13,7 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>true</restartOnCrash>
   <manifest></manifest>
-  <icon>D:\duffinmusicplayer-java\logo.ico</icon>
+  <icon>D:\duffinmusicplayer-java - with sh8\logo.ico</icon>
   <singleInstance>
     <mutexName>DuffinMusicPlayer</mutexName>
     <windowTitle>Duffin&apos;s Music Player</windowTitle>

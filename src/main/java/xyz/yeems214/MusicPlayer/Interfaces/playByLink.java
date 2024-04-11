@@ -27,7 +27,7 @@ public class playByLink extends Main {
     public static void address() throws Exception {
         clearConsole();
         System.out.println("\033[1;34mPlay by Link\033[0m");
-        System.out.println("Please enter the address of a song to play (Supported formats: .wav, .flac): Press q to quit. \n");
+        System.out.println("Please enter the address of a song to play (Supported formats: .wav, .flac): Press q to quit.");
         Scanner input = new Scanner(System.in);
         String filePath = input.nextLine();
         if (input == null) {
@@ -42,11 +42,24 @@ public class playByLink extends Main {
                 clearConsole();
                 System.out.println("Please enter the address of the lyrics file: ");
                 String lyricsFile = input.nextLine();
+                if (lyricsFile.isEmpty()) {
+                    System.out.println("Invalid choice! Please try again.");
+                    return;
+                } else if (lyricsFile.contains("\"")) {
+                    lyricsFile = lyricsFile.replace("\"", "");
+                }
+
+                if (filePath.contains("\"")) {
+                    filePath = filePath.replace("\"", "");
+                }
                 songWithLyricsOptions(filePath, lyricsFile);
                 if (lyricsFile.equals("q")) {
                     mainMenu();
                 }
             }
+        }
+        if (filePath.contains("\"")) {
+            filePath = filePath.replace("\"", "");
         }
         songOptions(filePath);
     }
